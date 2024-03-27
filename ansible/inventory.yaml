@@ -1,0 +1,6 @@
+all:
+  children:
+    gitlabrunner:
+      hosts:
+        176.109.108.221:
+          ansible_user: gitlabrunner 
