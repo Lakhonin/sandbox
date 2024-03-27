@@ -1,0 +1,12 @@
+stages:
+  - module-pipelines
+
+ansible:
+  stage: module-pipelines
+  trigger:
+    include:
+      - local: 'ansible/ansible.yml'
+    strategy: depend
+  rules:
+    - changes:
+          - ansible/*
