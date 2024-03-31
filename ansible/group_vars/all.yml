@@ -1,1 +1,4 @@
 docker_repo: https://download.docker.com/linux/centos/docker-ce.repo
+name_gitlab_runner: ${ NAME_GITLAB_RUNNER }
+id_gitlab_runner: ${ ID_GITLAB_RUNNER }
+token_gitlab_runner: ${ TOKEN_GITLAB_RUNNER }
