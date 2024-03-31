@@ -7,6 +7,15 @@ ansible:
     include:
       - local: 'ansible/ansible.yml'
     strategy: depend
-  rules:
+  only:
     - changes:
           - ansible/*
+terraform:
+  stage: module-pipelines
+  trigger:
+    include:
+      - local: 'terraform/terraform.yml'
+    strategy: depend
+  only:
+    - changes:
+          - terraform/*
