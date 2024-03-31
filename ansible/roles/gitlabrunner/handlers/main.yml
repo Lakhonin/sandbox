@@ -1,0 +1,6 @@
+---
+# handlers for gitlab-runner
+- name: restart gitlab-runner.service
+  service:
+    name: gitlab-runner.service
+    state: restarted
