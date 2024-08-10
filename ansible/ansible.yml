@@ -3,17 +3,15 @@ stages:
 
 image: alpine/gitlab-ansible-terraform:1.1.9
 before_script:
-  - export ID_GITLAB_RUNNER=${ID_GITLAB_RUNNER}
-  - export NAME_GITLAB_RUNNER=${NAME_GITLAB_RUNNER}
-  - export TOKEN_GITLAB_RUNNER=${TOKEN_GITLAB_RUNNER}
   - cd ansible
   - ansible --version
   - eval $(ssh-agent -s)
   - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+  - echo "$ANSIBLE_VAULT_PASS" >> ~/.ansible_vault_pass
   - mkdir -p ~/.ssh
   - chmod -R 600 ~/.ssh
   - export ANSIBLE_FORCE_COLOR=true
 deploy:
   stage: deploy
   script:
-    - ansible-playbook playbook.yaml -i inventory.yaml
+    - ansible-playbook playbook.yaml -i inventory.yaml --vault-password-file=~/.ansible_vault_pass
