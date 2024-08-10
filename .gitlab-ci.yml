@@ -7,6 +7,6 @@ ansible:
     include:
       - local: 'ansible/ansible.yml'
     strategy: depend
-  only:
+  rules:
     - changes:
           - ansible/*
