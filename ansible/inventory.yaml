@@ -2,5 +2,5 @@ all:
   children:
     gitlabrunner:
       hosts:
-        176.109.108.221:
+        87.242.85.137:
           ansible_user: gitlabrunner 
