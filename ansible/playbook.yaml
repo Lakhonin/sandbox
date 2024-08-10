@@ -1,6 +1,6 @@
-- name: Install docker
-  hosts: gitlabrunner
-  become: yes
-  roles:
-    - docker
-    - gitlabrunner
+#- name: Install docker
+#  hosts: gitlabrunner
+#  become: yes
+#  roles:
+#    - docker
+#    - gitlabrunner
