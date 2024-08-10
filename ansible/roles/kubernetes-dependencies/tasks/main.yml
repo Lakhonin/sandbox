@@ -7,9 +7,11 @@
   with_items:
     - swap
     - none
+  become: true
 - name: Disable swap
   command: swapoff -a
   when: ansible_swaptotal_mb > 0
+  become: true
 - name: Load required modules
   community.general.modprobe:
     name: "{{ item }}"
