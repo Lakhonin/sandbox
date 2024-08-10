@@ -7,6 +7,7 @@
     - yum-utils
     - device-mapper-persistent-data
     - lvm2
+    - python-docker
 - name: Add Docker repo
   get_url:
     url: "{{ docker_repo }}"
@@ -24,7 +25,7 @@
     state: latest
   notify:
     - Start Docker service
-- name: Add user vagrant to docker group
+- name: Add user gitlabrunner to docker group
   user:
     name: gitlabrunner
     groups: docker
