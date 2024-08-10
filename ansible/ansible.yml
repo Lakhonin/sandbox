@@ -3,6 +3,9 @@ stages:
 
 image: alpine/gitlab-ansible-terraform:1.1.9
 before_script:
+  - export ID_GITLAB_RUNNER=${ID_GITLAB_RUNNER}
+  - export NAME_GITLAB_RUNNER=${NAME_GITLAB_RUNNER}
+  - export TOKEN_GITLAB_RUNNER=${TOKEN_GITLAB_RUNNER}
   - cd ansible
   - ansible --version
   - eval $(ssh-agent -s)
