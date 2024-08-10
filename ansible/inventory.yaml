@@ -2,5 +2,15 @@ all:
   children:
     gitlabrunner:
       hosts:
-        176.109.108.221:
-          ansible_user: gitlabrunner 
+        87.242.85.137:
+          ansible_user: gitlabrunner
+    kubernetes:
+      children:
+        master:
+          hosts:
+            87.242.117.161:
+              ansible_user: gitlabrunner 
+        worker:        
+          hosts:
+            87.242.85.137:
+              ansible_user: gitlabrunner  

@@ -1,6 +1,10 @@
-- name: Install docker
-  hosts: gitlabrunner
-  become: yes
+#- name: Install docker
+#  hosts: gitlabrunner
+#  become: yes
+#  roles:
+#    - docker
+#    - gitlabrunner
+- name: Install dependencies for kubernetes
+  hosts: kubernetes
   roles:
-    - docker
-    - gitlabrunner
+    - kubernetes-dependencies
