@@ -47,7 +47,6 @@
   ansible.builtin.package: 
     name: containerd.io
     state: present
-    update_cache: yes 
   become: true
 - name: Create containerd directory
   ansible.builtin.file: 
